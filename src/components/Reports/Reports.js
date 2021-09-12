@@ -7,21 +7,21 @@ const Reports = () => {
   const [dates, setDates] = useState([]);
   const [downloaded, setDownloaded] = useState([]);
   useEffect(() => {
-    fetch("http://localhost:5011/reports")
+    fetch("http://192.168.10.11:5011/reports")
       .then((res) => res.json())
       .then((data) => {
         setReport(data);
       });
   }, []);
   useEffect(() => {
-    fetch("http://localhost:5011/reportDates")
+    fetch("http://192.168.10.11:5011/reportDates")
       .then((res) => res.json())
       .then((data) => setDates(data));
   }, []);
 
   function handlePrepare(pdate) {
     console.log(pdate);
-    fetch("http://localhost:5011/prepareByDate?date=" + pdate)
+    fetch("http://192.168.10.11:5011/prepareByDate?date=" + pdate)
       .then((res) => res.json())
       .then((data) => setDownloaded(data));
   }
@@ -55,8 +55,6 @@ const Reports = () => {
     { label: "watched_av", key: "watched_av" },
     { label: "sales_status", key: "sales_status" },
     { label: "brand", key: "brand" },
-    { label: "Sales_Point", key: "Sales_Point" },
-    { label: "Scope", key: "Scope" },
     { label: "for_d", key: "for_d" },
     { label: "agentID", key: "agentID" },
     { label: "qcBy", key: "qcChecked" },
@@ -70,16 +68,15 @@ const Reports = () => {
     { label: "q3", key: "answer3" },
     { label: "q4", key: "answer4" },
     { label: "q5", key: "answer5" },
+    { label: "q5dot1", key: "answer5dot1" },
     { label: "q6", key: "answer6" },
     { label: "q7", key: "answer7" },
     { label: "q7dot1", key: "answer7dot1" },
-    { label: "q7dot1dot1", key: "answer7dot1dot1" },
-    { label: "q8dot1", key: "answer8dot1" },
-    { label: "q8dot2", key: "answer8dot2" },
+    { label: "q8", key: "answer8" },
     { label: "q9", key: "answer9" },
-    { label: "q10", key: "answer10" },
+    { label: "q10dot1", key: "answer10dot1" },
+    { label: "q10dot2", key: "answer10dot2" },
     { label: "q11", key: "answer11" },
-    { label: "q11", key: "answer12" },
   ];
   return (
     <div className="mt-5">

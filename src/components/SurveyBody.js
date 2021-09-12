@@ -30,7 +30,7 @@ const SurveyBody = () => {
     setSearchNumber(e.target.value);
   };
   const handleSearch = () => {
-    fetch(`http://localhost:5011/dMatched/${searchNumber}`)
+    fetch(`http://192.168.10.11:5011/dMatched/${searchNumber}`)
       .then((res) => res.json())
       .then((data) => setConsumer(data));
     setNotFound(true);
@@ -100,7 +100,7 @@ const SurveyBody = () => {
       callDate: new Date().toLocaleDateString(),
       callTime: new Date().toLocaleTimeString(),
     };
-    fetch(`http://localhost:5011/answers/${consumer?._id}`, {
+    fetch(`http://192.168.10.11:5011/answers/${consumer?._id}`, {
       method: "PATCH",
       headers: { "Content-type": "application/json" },
       body: JSON.stringify(answer),
@@ -364,6 +364,8 @@ const SurveyBody = () => {
             <option value="delight">ফুর্তি</option>
             <option value="moreDelight">বেশি ফুর্তি</option>
             <option value="extraDelight">বাড়তি ফুর্তি</option>
+            <option value="comeOnHero">চলো বীর</option>
+            <option value="youAloneAreOneHundred">তুমি একাই একশো</option>
             <option value="canNotRemember">মনে করতে পারে নি</option>
           </Form.Control>
         </Form.Group>

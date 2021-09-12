@@ -6,7 +6,7 @@ const routes = [
     path: "/dashboard",
     exact: true,
     name: "Survey",
-    toolbar: () => <p className="text-white">JTI EAS One To One</p>,
+    toolbar: () => <p className="text-white">JTI Sheikh 100s</p>,
     main: () => <SurveyBody />,
   },
 ];
