@@ -9,7 +9,6 @@ const LeadGenerate = () => {
   const [regenerateUpdateStatus, setRegenerateUpdateStatus] = useState(false);
   const [initialDate, setInitialDate] = useState("");
   const [regenDate, setRegenDate] = useState("");
-  console.log(initialLeads);
   const manageInitialDate = (e) => {
     const d = new Date(e.target.value);
     let dt = d.getDate();
